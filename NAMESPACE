@@ -1,0 +1,14 @@
+importFrom(MASS, ginv)
+
+importFrom(rags2ridges, sparsify, GGMnetworkStats, GGMpathStats)
+
+importFrom(stats, optim)
+
+importFrom(stats, constrOptim)
+
+importFrom(mvtnorm, rmvnorm)
+
+exportPattern("^[[:alpha:]]+")
+
+useDynLib(porridge, .registration=TRUE)
+

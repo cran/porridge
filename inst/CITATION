@@ -1,0 +1,61 @@
+citHeader("To cite the porridge package in publications please use:")
+
+year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", meta$Date, perl = TRUE)
+vers <- paste("R package version", meta$Version)
+
+citEntry(entry="Manual",
+    title = "porridge: Ridge-Type Estimation of a Potpourri of Models",
+    author = personList(as.person("W.N. van Wieringen"), as.person("M. Aflakparast")),
+    year = year,
+    note = vers,
+    url = "https://CRAN.R-project.org/package=porridge",
+    textVersion =
+      paste("van Wieringen, W.N. (", year,
+            ") porridge:  Ridge-Type Estimation of a Potpourri of Models. ",
+            vers, ". https://CRAN.R-project.org/package=porridge", sep = "")
+)
+
+citEntry(entry="Article",
+    title = "Reconstruction of molecular network evolution from cross-sectional omics data",
+    author = personList(as.person("M. Aflakparast"), as.person("M.C.M. de Gunst"), as.person("W.N. van Wieringen")),
+    journal = "Biometrical Journal",
+    volume = "60", 
+    number = "3", 
+    pages =  "547-563",
+    year = 2018,
+    textVersion =
+      paste("Aflakparast, M., de Gunst, M.C.M., van Wieringen, W.N. (2018). ",
+		"Reconstruction of molecular network evolution from cross-sectional omics data. ", 
+        	"Biometrical Journal, 60(3), 547-643", sep = "")
+)
+
+citEntry(entry="Article",
+    title = "The generalized ridge estimator of the inverse covariance matrix",
+    author = personList(as.person("W.N. van Wieringen")),
+    journal = "Journal of Computational and Graphical Statistics",
+    volume = "", 
+    number = "", 
+    pages =  "",
+    year = 2019,
+    textVersion =
+      paste("van Wieringen, W.N. (2019). ",
+		"The generalized ridge estimator of the inverse covariance matrix. ", 
+        	"Journal of Computational and Graphical Statistics", sep = "")
+
+)
+
+citEntry(entry="Article",
+    title = "Penalized estimation of the Gaussian graphical model from data with replicates",
+    author = personList(as.person("W.N. van Wieringen"), as.person("Y. Chen")),
+    journal = "submitted",
+    volume = "", 
+    number = "", 
+    pages =  "",
+    year = 2019,
+    textVersion =
+      paste("van Wieringen, W.N., Chen, Y. (2019). ",
+		"Penalized estimation of the Gaussian graphical model from data with replicates. ", 
+        	"submitted", sep = "")
+
+)
+
