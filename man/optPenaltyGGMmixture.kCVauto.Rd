@@ -1,3 +1,12 @@
+\section{Changes in version 0.3.2}{
+ \itemize{
+    \item The packages \code{Biobase} and \code{CHGbase} are now suggested in the \code{DESCRIPTION}-file to avoid errors on CRAN. 
+    \item The \code{.Rd}-file of the package is updated.
+    \item Citations are updated.
+    \item A typo corrected.
+    \item Some warnings on \code{C++}-code tackled.
+  }
+}
 \name{optPenaltyGGMmixture.kCVauto}
 \alias{optPenaltyGGMmixture.kCVauto}
 \title{
@@ -67,7 +76,7 @@ Sigma1      <- solve(Omega)
 Omega       <- matrix(0.3, p, p)
 diag(Omega) <- 1
 Sigma2      <- solve(Omega)
-Sigma3      <- covML(matrix(rnorm(p*n), ncol=p))
+Sigma3      <- cov(matrix(rnorm(p*n), ncol=p))
 
 # mean vectors
 mean1 <- rep(0,p)

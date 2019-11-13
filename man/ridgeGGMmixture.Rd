@@ -74,7 +74,7 @@ Sigma1      <- solve(Omega)
 Omega       <- matrix(0.3, p, p)
 diag(Omega) <- 1
 Sigma2      <- solve(Omega)
-Sigma3      <- covML(matrix(rnorm(p*n), ncol=p))
+Sigma3      <- cov(matrix(rnorm(p*n), ncol=p))
 
 # mean vectors
 mean1 <- rep(0,p)

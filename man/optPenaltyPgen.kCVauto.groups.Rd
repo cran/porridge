@@ -59,7 +59,7 @@ Sigma       <- solve(Omega)
 
 # data 
 Y <- mvtnorm::rmvnorm(n, mean=rep(0,p), sigma=Sigma)
-S <- covML(Y)
+S <- cov(Y)
 
 # find optimal penalty parameters through cross-validation
 lambdaOpt <- optPenaltyPgen.kCVauto.groups(Y, rep(10^(-10), 2), rep(10^(10), 2), 

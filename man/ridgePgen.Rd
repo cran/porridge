@@ -51,7 +51,7 @@ Sigma       <- solve(Omega)
 
 # data 
 Y <- mvtnorm::rmvnorm(n, mean=rep(0,p), sigma=Sigma)
-S <- covML(Y)
+S <- cov(Y)
 
 # unpenalized diagonal estimate
 Phat <- ridgePgen(S, lambda, 0*S)
