@@ -49,10 +49,10 @@ ridgePgen.kCV <- function(lambda,
 	## ---------------------------------------------------------------------
 
 	# input checks
-	if (!is.matrix(Y)){ 
+	if (!is(Y, "matrix")){  
 		stop("Input (Y) should be a matrix")
 	}
-	if (class(lambda) != "matrix"){ 
+	if (!is(lambda, "matrix")){  
 		stop("Input (lambdas) is of wrong class") 
 	}
 	if (nrow(lambda) != ncol(lambda)){ 
@@ -156,7 +156,7 @@ ridgePgen.kCV.banded <- function(lambda,
 	## ---------------------------------------------------------------------
 
 	# input checks
-	if (!is.matrix(Y)){ 
+	if (!is(Y, "matrix")){  
 		stop("Input (Y) should be a matrix")
 	}
 	if (class(lambda) != "numeric"){ 
@@ -204,7 +204,7 @@ ridgePgen.kCV.banded <- function(lambda,
 	if (nInit%%1 != 0){ 
 	    stop("Input (nInit) is not a positive integer.") 
 	}
-	if (as.character(class(zeros)) != "matrix"){ 
+	if (!is(zeros, "matrix")){  
 	    stop("Input (zeros) is of wrong class.") 
 	}    
 	if(ncol(zeros) != 2){ 
@@ -277,7 +277,7 @@ ridgePgen.kCV.groups <- function(lambdaGrps,
 	## ---------------------------------------------------------------------
 
 	# input checks
-	if (!is.matrix(Y)){ 
+	if (!is(Y, "matrix")){  
 		stop("Input (Y) should be a matrix")
 	}
 	if (class(lambdaGrps) != "numeric"){ 
@@ -331,7 +331,7 @@ ridgePgen.kCV.groups <- function(lambdaGrps,
 	if (nInit%%1 != 0){ 
 	    stop("Input (nInit) is not a positive integer.") 
 	}
-	if (as.character(class(zeros)) != "matrix"){ 
+	if (!is(zeros, "matrix")){  
 	    stop("Input (zeros) is of wrong class.") 
 	}    
 	if(ncol(zeros) != 2){ 
@@ -406,7 +406,7 @@ optPenaltyPgen.kCVauto.banded <- function(Y,
 	## ---------------------------------------------------------------------
 
 	# input checks
-	if (!is.matrix(Y)){ 
+	if (!is(Y, "matrix")){  
 		stop("Input (Y) should be a matrix")
 	}
 	if (class(lambdaMin) != "numeric"){ 
@@ -475,7 +475,7 @@ optPenaltyPgen.kCVauto.banded <- function(Y,
 	if (nInit%%1 != 0){ 
 	    stop("Input (nInit) is not a positive integer.") 
 	}
-	if (as.character(class(zeros)) != "matrix"){ 
+	if (!is(zeros, "matrix")){  
 	    stop("Input (zeros) is of wrong class.") 
 	}    
 	if(ncol(zeros) != 2){ 
@@ -556,7 +556,7 @@ optPenaltyPgen.kCVauto.groups <- function(Y,
 	## ---------------------------------------------------------------------
 
 	# input checks
-	if (!is.matrix(Y)){ 
+	if (!is(Y, "matrix")){  
 		stop("Input (Y) should be a matrix")
 	}
 	if (class(lambdaMin) != "numeric"){ 
@@ -631,7 +631,7 @@ optPenaltyPgen.kCVauto.groups <- function(Y,
 	if (nInit%%1 != 0){ 
 	    stop("Input (nInit) is not a positive integer.") 
 	}
-	if (as.character(class(zeros)) != "matrix"){ 
+	if (!is(zeros, "matrix")){  
 	    stop("Input (zeros) is of wrong class.") 
 	}    
 	if(ncol(zeros) != 2){ 

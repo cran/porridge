@@ -6,6 +6,8 @@ importFrom(stats, constrOptim)
 
 importFrom(mvtnorm, rmvnorm)
 
+importFrom("methods", "is")
+
 importFrom(Rcpp, evalCpp)
 
 exportPattern("^[[:alpha:]]+")

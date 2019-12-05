@@ -38,7 +38,7 @@ ridgePrep <- function(Y,
 	## ---------------------------------------------------------------------
 
 	# input checks
-	if (!is.matrix(Y)){ 
+	if (!is(Y, "matrix")){  
 		stop("Input (Y) should be a matrix")
 	}
 	if (class(ids) != "numeric" & class(ids) != "integer"){
@@ -68,7 +68,7 @@ ridgePrep <- function(Y,
 	if (lambdaE <= 0){ 
 		stop("Input (lambdaE) is not a positive number.") 
 	}
-	if (as.character(class(targetZ)) != "matrix"){ 
+	if (!is(targetZ, "matrix")){  
 		stop("Input (targetZ) is of wrong class.") 
 	}
 	if (dim(Y)[2] != nrow(targetZ)){ 
@@ -77,7 +77,7 @@ ridgePrep <- function(Y,
 	if (dim(Y)[2] != ncol(targetZ)){ 
 		stop("Dimensions of input (targetZ) do not match that of other input (Y).")  
 	}
-	if (as.character(class(targetE)) != "matrix"){ 
+	if (!is(targetE, "matrix")){  
 		stop("Input (targetE) is of wrong class.") 
 	}
 	if (dim(Y)[2] != nrow(targetE)){ 
@@ -147,7 +147,7 @@ ridgePrepEdiag <- function(Y,
 	## ---------------------------------------------------------------------
 
 	# input checks
-	if (!is.matrix(Y)){ 
+	if (!is(Y, "matrix")){  
 		stop("Input (Y) should be a matrix")
 	}
 	if (class(ids) != "numeric" & class(ids) != "integer"){
@@ -162,7 +162,7 @@ ridgePrepEdiag <- function(Y,
 	if (is.na(lambdaZ)){ 
 		stop("Input (lambdaZ) is not a positive number.") 
 	}
-	if (as.character(class(targetZ)) != "matrix"){ 
+	if (!is(targetZ, "matrix")){  
 		stop("Input (targetZ) is of wrong class.") 
 	}
 	if (dim(Y)[2] != nrow(targetZ)){ 
@@ -249,13 +249,13 @@ optPenaltyPrep.kCVauto <- function(Y,
 	## ---------------------------------------------------------------------
 
 	# input checks
-	if (!is.matrix(Y)){ 
+	if (!is(Y, "matrix")){  
 		stop("Input (Y) should be a matrix")
 	}
 	if (class(ids) != "numeric" & class(ids) != "integer"){
 		stop("Input (ids) is of wrong class") 
 	}
-	if (as.character(class(targetZ)) != "matrix"){ 
+	if (!is(targetZ, "matrix")){  
 		stop("Input (targetZ) is of wrong class.") 
 	}
 	if (dim(Y)[2] != nrow(targetZ)){ 
@@ -264,7 +264,7 @@ optPenaltyPrep.kCVauto <- function(Y,
 	if (dim(Y)[2] != ncol(targetZ)){ 
 		stop("Dimensions of input (targetZ) do not match that of other input (Y).")  
 	}
-	if (as.character(class(targetE)) != "matrix"){ 
+	if (!is(targetE, "matrix")){  
 		stop("Input (targetE) is of wrong class.") 
 	}
 	if (dim(Y)[2] != nrow(targetE)){ 
@@ -405,13 +405,13 @@ optPenaltyPrepEdiag.kCVauto <- function(Y,
 	## ---------------------------------------------------------------------
 
 	# input checks
-	if (!is.matrix(Y)){ 
+	if (!is(Y, "matrix")){  
 		stop("Input (Y) should be a matrix")
 	}
 	if (class(ids) != "numeric" & class(ids) != "integer"){
 		stop("Input (ids) is of wrong class") 
 	}
-	if (as.character(class(targetZ)) != "matrix"){ 
+	if (!is(targetZ, "matrix")){  
 		stop("Input (targetZ) is of wrong class.") 
 	}
 	if (dim(Y)[2] != nrow(targetZ)){ 

@@ -23,8 +23,8 @@ In part the \code{porridge}-package extends/builds upon the \code{\link[rags2rid
 \tabular{ll}{
 Package: \tab porridge\cr
 Type: \tab Package\cr
-Version: \tab 0.0.1\cr
-Date: \tab 2019-09-19\cr
+Version: \tab 0.0.3\cr
+Date: \tab 2019-12-05\cr
 License: \tab GPL (>= 2) \cr
 }
 }

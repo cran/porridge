@@ -56,7 +56,7 @@ ridgeGGMmixture <- function(Y,
 	## ---------------------------------------------------------------------
 
 	# input checks
-	if (!is.matrix(Y)){ 
+	if (!is(Y, "matrix")){  
 		stop("Input (Y) should be a matrix")
 	}
 	if (class(K) != "numeric" & class(K) != "integer"){
@@ -77,7 +77,7 @@ ridgeGGMmixture <- function(Y,
 	if (lambda <= 0){ 
 		stop("Input (lambda) is not a positive number.") 
 	}
-	if (as.character(class(target)) != "matrix"){ 
+	if (!is(target, "matrix")){  
 		stop("Input (target) is of wrong class.") 
 	}
 	if (dim(Y)[2] != nrow(target)){ 
@@ -86,7 +86,7 @@ ridgeGGMmixture <- function(Y,
 	if (dim(Y)[2] != ncol(target)){ 
 		stop("Dimensions of input (target) do not match that of other input (Y).")  
 	}
-	if (as.character(class(iWeights)) != "matrix"){ 
+	if (!is(iWeights, "matrix")){  
 		stop("Input (iWeights) is of wrong class.") 
 	}
 	if (dim(Y)[1] != nrow(iWeights)){ 
@@ -182,7 +182,7 @@ optPenaltyGGMmixture.kCVauto <- function(Y,
 	## ---------------------------------------------------------------------
 
 	# input checks
-	if (!is.matrix(Y)){ 
+	if (!is(Y, "matrix")){  
 		stop("Input (Y) should be a matrix")
 	}
 	if (class(K) != "numeric" & class(K) != "integer"){
