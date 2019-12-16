@@ -1,11 +1,11 @@
-4a4538a3180b7333298a4af5f51c995c *DESCRIPTION
+50600dd0eed28ea008e5de732d5c8ab9 *DESCRIPTION
 a32ca5a34165a887fecb3e144d4db7a2 *NAMESPACE
 9a06aab22978f1e967686c8b53bbc7f4 *R/RcppExports.R
 7c1b4e316aef3310e20f78c66a7f313f *R/ridgeGGMmixtureAndCo.R
 b90760ac93cc78ff58cd4001ff4c6e79 *R/ridgePgenAndCo.r
 91d0f643eaa1237685510ff4bee570a5 *R/ridgePrepAndCo.R
 d2e0ec5fca1847128e6485cefa576f98 *inst/CITATION
-c641754fa16b7d19ade185062f1495da *inst/NEWS.Rd
+efc5a1a52ea5ecd0f83bbab44a48d8ec *inst/NEWS.Rd
 634eb2bdc002eeab94c58bb942defac1 *inst/include/porridge.h
 94949c50c6f0385fe897941310998081 *inst/include/porridge_RcppExports.h
 eda1b86b85710e698bf5380c66242276 *man/optPenaltyGGMmixture.kCVauto.Rd
@@ -24,4 +24,4 @@ bfde4e6f6129f30181b49b1cac14d25d *man/ridgePgen.Rd
 c8e80a85db170765a19e183c464d291a *src/Makevars
 4c19787bdf892421b718a6b2b43e0b2e *src/Makevars.win
 8febf4258a14ff796f0de454fcb47471 *src/RcppExports.cpp
-73e3660fe6d6a7eaf8f40ff8f7ebc3c6 *src/porridge.cpp
+673623a0e546be7fa73c71b2c6190c37 *src/porridge.cpp

@@ -2072,6 +2072,7 @@ Rcpp::List ridgePrepEMdiag(arma::mat            Y,
 	--------------------------------------------------------------------- */
 
 
+
 	//----------- variable declaration ----------------------------------//
 	// extract number of samples and variates  
   	int          nk = Y.n_rows;
@@ -2124,10 +2125,17 @@ Rcpp::List ridgePrepEMdiag(arma::mat            Y,
 
 	// obtain initial estimates from moment estimators
 	Sz  = armaRidgeS(Sz, targetZ, lambdaZ/n);
-	Se  = arma::diagmat(arma::diagvec(Se));
+	// Se  = arma::diagmat(arma::diagvec(Se));
+	diagSe = arma::diagvec(Se);
+	double diagSeMax = std::abs(diagSe.max());
+	arma::uvec diagSeIDneg = arma::find(diagSe <= 0);
+	if (diagSeIDneg.n_elem > 0){
+		for (unsigned int K = 0; K < diagSeIDneg.n_elem; ++K){
+			diagSe(diagSeIDneg(K)) = diagSeMax;
+		}
+	}
+	Se  = arma::diagmat(diagSe);
 	//----------- end of initialization ---------------------------------//
-
-
 
 	//----------- reformat data -----------------------------------------//
 	// sort data by number of replications (for faster E-step calculation)
@@ -2375,7 +2383,16 @@ inline double ridgePrepEMdiagInternal(arma::mat         Ytrain,
 
 	// obtain initial estimates from moment estimators
 	Sz  = armaRidgeS(Sz, targetZ, lambdaZ/n);
-	Se  = arma::diagmat(arma::diagvec(Se));
+	// Se  = arma::diagmat(arma::diagvec(Se));
+	diagSe = arma::diagvec(Se);
+	double diagSeMax = std::abs(diagSe.max())+0.1;
+	arma::uvec diagSeIDneg = arma::find(diagSe <= 0);
+	if (diagSeIDneg.n_elem > 0){
+		for (unsigned int K = 0; K < diagSeIDneg.n_elem; ++K){
+			diagSe(diagSeIDneg(K)) = diagSeMax;
+		}
+	}
+	Se  = arma::diagmat(diagSe);
 	//----------- end of initialization ---------------------------------//
 
 
