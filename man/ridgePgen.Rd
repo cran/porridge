@@ -27,7 +27,7 @@ where \eqn{\mathbf{S}} the sample covariance matrix, \eqn{\boldsymbol{\Lambda}} 
 The function returns a regularized inverse covariance \code{matrix}.
 }
 \references{
-van Wieringen, W.N. (2019), "The generalized ridge estimator of the inverse covariance matrix", \emph{Journal of Computational and Graphical Statistics}, \url{ https://doi.org/10.1080/10618600.2019.1604374}.
+van Wieringen, W.N. (2019), "The generalized ridge estimator of the inverse covariance matrix", \emph{Journal of Computational and Graphical Statistics}, 28(4), 932-942.
 }
 \author{
 W.N. van Wieringen.

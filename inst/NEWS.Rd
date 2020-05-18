@@ -2,6 +2,14 @@
 \title{News for Package \pkg{porridge}}
 \newcommand{\cpkg}{\href{http://cran.r-project.org/package=#1}{\pkg{#1}}}
 
+\section{Changes in version 0.1.0}{
+ \itemize{
+    \item Restructuring of R and C++ files into modules.
+    \item Novel module added.
+    \item Some layout polish in the manual.
+  }
+}
+
 \section{Changes in version 0.0.4}{
  \itemize{
     \item Modification of C++ code related to the \code{ridgePrepEdiag}- and \code{optPenaltyPrepEdiag}-functions. In case of an unbalanced design the initialization of EM algorithm no longer yields negative definite precisiom matrices.

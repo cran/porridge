@@ -23,8 +23,8 @@ In part the \code{porridge}-package extends/builds upon the \code{\link[rags2rid
 \tabular{ll}{
 Package: \tab porridge\cr
 Type: \tab Package\cr
-Version: \tab 0.0.3\cr
-Date: \tab 2019-12-05\cr
+Version: \tab 0.1.0\cr
+Date: \tab 2020-05-17\cr
 License: \tab GPL (>= 2) \cr
 }
 }
@@ -34,13 +34,15 @@ Wessel N. van Wieringen <w.vanwieringen@vumc.ml>
 \references{
 Aflakparast, M., de Gunst, M.C.M., van Wieringen, W.N. (2018), "Reconstruction of molecular network evolution from cross-sectional omics data", \emph{Biometrical Journal}, 60(3), 547-563.
 
+Peeters, C.F.W., Bilgrau, A.E., and van Wieringen, W.N. (2019), "\code{rags2ridges}: Ridge Estimation of Precision Matrices from  High-Dimensional Data", R package version 2.2.2. \url{https://CRAN.R-project.org/package=rags2ridges}.
+
+van Wieringen, W.N. (2020), "\code{ragt2ridges}: Ridge Estimation of Vector  Auto-Regressive (VAR) Processes", R package version 0.3.4. \url{https://CRAN.R-project.org/package=ragt2ridges}.
+
+van Wieringen, W.N. (2019), "The generalized ridge estimator of the inverse covariance matrix", \emph{Journal of Computational and Graphical Statistics}, 28(4), 932-942.
+
 van Wieringen W.N., Chen, Y. (2019), "Penalized estimation of the Gaussian graphical model from data with replicates", submitted.
 
-Peeters, C.F.W., Bilgrau, A.E., and van Wieringen, W.N. (2019), "\code{rags2ridges}: Ridge Estimation of Precision Matrices from  High-Dimensional Data", R package version 2.2.1. \url{https://CRAN.R-project.org/package=rags2ridges}.
-
-van Wieringen, W.N. (2018), "\code{ragt2ridges}: Ridge Estimation of Vector  Auto-Regressive (VAR) Processes", R package version 0.3.2. \url{https://CRAN.R-project.org/package=ragt2ridges}.
-
-van Wieringen, W.N. (2019), "The generalized ridge estimator of the inverse covariance matrix", \emph{Journal of Computational and Graphical Statistics}, \url{ https://doi.org/10.1080/10618600.2019.1604374}.
+van Wieringen, W.N., Stam, K.A., Peeters, C.F.W., van de Wiel, M.A. (2020), "Updating of the Gaussian graphical model through targeted penalized estimation", \emph{Journal of Multivariate Analysis}, 178, Article 104621.
 }
 \keyword{ package }
 \seealso{

@@ -38,7 +38,7 @@ The penalty matrix \eqn{\boldsymbol{\Lambda}} is parametrized as follows. The el
 W.N. van Wieringen.
 }
 \references{
-van Wieringen, W.N. (2019), "The generalized ridge estimator of the inverse covariance matrix", \emph{Journal of Computational and Graphical Statistics}, \url{ https://doi.org/10.1080/10618600.2019.1604374}.
+van Wieringen, W.N. (2019), "The generalized ridge estimator of the inverse covariance matrix", \emph{Journal of Computational and Graphical Statistics}, 28(4), 932-942.
 }
 \seealso{
 \code{ridgePgen}
@@ -64,7 +64,7 @@ S <- cov(Y)
 # find optimal penalty parameters through cross-validation
 lambdaOpt <- optPenaltyPgen.kCVauto.groups(Y, rep(10^(-10), 2), rep(10^(10), 2), 
                           groups=c(rep(0, p/2), rep(1, p/2)), 
-			  target=matrix(0, p, p),
+                          target=matrix(0, p, p),
                           penalize.diag=FALSE, nInit=100, 
                           minSuccDiff=10^(-5)) 
 
