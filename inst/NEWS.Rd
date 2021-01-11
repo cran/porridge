@@ -2,6 +2,14 @@
 \title{News for Package \pkg{porridge}}
 \newcommand{\cpkg}{\href{http://cran.r-project.org/package=#1}{\pkg{#1}}}
 
+
+\section{Changes in version 0.1.1}{
+ \itemize{
+    \item Corrected DOIs in the Description field.
+  }
+}
+
+
 \section{Changes in version 0.1.0}{
  \itemize{
     \item Restructuring of R and C++ files into modules.

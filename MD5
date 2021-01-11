@@ -1,4 +1,4 @@
-02c48cbf3fec28a806bab78dc1359ec5 *DESCRIPTION
+cf3218a969dab794b90ece4378167bea *DESCRIPTION
 8d008a8d413f1b42af77fca0a0328745 *NAMESPACE
 284ccf616f59e1398e31e7e0ea5c8530 *R/RcppExports.R
 5bf567bb166b696397d3f33763a65478 *R/porridge-package.R
@@ -7,7 +7,7 @@ b90760ac93cc78ff58cd4001ff4c6e79 *R/ridgePgenAndCo.R
 96b8e105c790a44a716e101d5e933e42 *R/ridgePmultitTandCo.R
 91d0f643eaa1237685510ff4bee570a5 *R/ridgePrepAndCo.R
 d2e0ec5fca1847128e6485cefa576f98 *inst/CITATION
-8d130871020e48f99e5ed8b1744625a0 *inst/NEWS.Rd
+f3b0d5e9d2062499c76a9258a4985f51 *inst/NEWS.Rd
 634eb2bdc002eeab94c58bb942defac1 *inst/include/porridge.h
 466077e57e41e0b708a58c29d9d02000 *inst/include/porridge_RcppExports.h
 eda1b86b85710e698bf5380c66242276 *man/optPenaltyGGMmixture.kCVauto.Rd
@@ -16,7 +16,7 @@ ee123467285d30c60a565698de4700ad *man/optPenaltyPgen.kCVauto.groups.Rd
 3586e0de7f6e14778c830b1b7dbebfcf *man/optPenaltyPmultiT.kCVauto.Rd
 92a1047732c9e342fee81d22b52f13aa *man/optPenaltyPrep.kCVauto.Rd
 67c331f7a0d4d123a992a32d2c9706d1 *man/optPenaltyPrepEdiag.kCVauto.Rd
-b7eac8afdb3819a55135878d82fe6855 *man/porridge-package.Rd
+400dd046918f2c3a9948a6779ddb285a *man/porridge-package.Rd
 d3ea743b5a513c11d2950a2d1a1cb773 *man/ridgeGGMmixture.Rd
 b1e972423272f238e3e99f247db293d0 *man/ridgePgen.Rd
 687a26763d21057f2c308feebb2d6661 *man/ridgePgen.kCV.Rd
