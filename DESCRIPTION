@@ -1,8 +1,8 @@
 Package: porridge
 Type: Package
 Title: Ridge-Type Penalized Estimation of a Potpourri of Models
-Version: 0.2.0
-Date: 2021-02-03
+Version: 0.2.1
+Date: 2021-04-09
 Author: Wessel N. van Wieringen [aut, cre],
   Mehran Aflakparast [ctb] (part of the R-code of the mixture
     functionality)
@@ -20,6 +20,6 @@ Imports: MASS, stats, mvtnorm, Rcpp, methods
 Suggests: Matrix
 LinkingTo: Rcpp, RcppArmadillo
 NeedsCompilation: yes
-Packaged: 2021-02-08 21:16:51 UTC; wessel
+Packaged: 2021-04-19 12:03:30 UTC; wessel
 Repository: CRAN
-Date/Publication: 2021-02-09 13:40:14 UTC
+Date/Publication: 2021-04-19 12:20:03 UTC

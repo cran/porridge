@@ -2,6 +2,12 @@
 \title{News for Package \pkg{porridge}}
 \newcommand{\cpkg}{\href{http://cran.r-project.org/package=#1}{\pkg{#1}}}
 
+\section{Changes in version 0.2.1}{
+ \itemize{
+    \item Faster implementation of the functions for target and multi-targeted ridge estimation of the GLM offered.
+  }
+}
+
 \section{Changes in version 0.2.0}{
  \itemize{
     \item Reference added to the Description-file.

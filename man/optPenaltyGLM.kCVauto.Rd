@@ -12,7 +12,8 @@ associated with the estimator.
 \usage{
 optPenaltyGLM.kCVauto(Y, X, lambdaInit, fold=nrow(X), stratified=TRUE,
                       target=rep(0, ncol(X)), model, loss="loglik",
-                      minSuccDiff=10^(-5), maxIter=100)
+                      lambdaMin=10^(-10), lambdaMax=10^(10),
+                      minSuccDiff=10^(-5), maxIter=100, implementation="org")
 }
 \arguments{
 \item{Y}{           A \code{numeric} being the response vector. }
@@ -23,8 +24,11 @@ optPenaltyGLM.kCVauto(Y, X, lambdaInit, fold=nrow(X), stratified=TRUE,
 \item{target}{      A \code{numeric} towards which the estimate is shrunken. }
 \item{model}{       A \code{character}, either \code{"linear"} and \code{"logistic"} (a reference to the models currently implemented), indicating which generalized linear model model instance is to be fitted. }
 \item{loss}{        A \code{numeric}, loss criterion to be used in the cross-validation. Used only if \code{model="linear"}. }
+\item{ lambdaMin }{ A positive \code{numeric}, the lower bound of search interval. }
+\item{ lambdaMax }{  A positive \code{numeric} larger than \code{lambdaMin}, the upper bound of the search interval. }
 \item{minSuccDiff}{ A \code{numeric}, the minimum distance between the loglikelihoods of two successive iterations to be achieved. Used only if \code{model="logistic"}. }
 \item{maxIter}{     A \code{numeric} specifying the maximum number of iterations. Used only if \code{model="logistic"}. }
+\item{implementation}{ A \code{character}, either \code{"org"} or \code{"alt"}, specifying the implementation to be used. }
 }
 \value{
 The function returns a all-positive \code{numeric}, the cross-validated optimal penalty parameters. The average loglikelihood over the left-out samples is used as the cross-validation criterion. If \code{model="linear"}, also the average sum-of-squares over the left-out samples is offered as cross-validation criterion.

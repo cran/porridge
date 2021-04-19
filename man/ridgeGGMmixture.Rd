@@ -88,7 +88,7 @@ Y <- rbind(mvtnorm::rmvnorm(sum(Z==1), mean=mean1, sigma=Sigma1),
            mvtnorm::rmvnorm(sum(Z==3), mean=mean3, sigma=Sigma3))
 
 # find optimal penalty parameter
-\donttest{optLambda <- optPenaltyGGMmixture.kCVauto(Y,  K,            }
+\donttest{optLambda <- optPenaltyGGMmixture.kCVauto(Y,  3,            }
 \donttest{                                          0.00001, 100,     }
 \donttest{                                          10, fold=5,       }
 \donttest{                                          target=0*Sigma1)  }
