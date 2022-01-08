@@ -2,6 +2,14 @@
 \title{News for Package \pkg{porridge}}
 \newcommand{\cpkg}{\href{http://cran.r-project.org/package=#1}{\pkg{#1}}}
 
+\section{Changes in version 0.3.0}{
+ \itemize{
+    \item Functionality of the \code{ridgeGLM} and \code{optPenaltyGLM.kCVauto} expanded. Among other, unpenalized covariates may now be supplied and a generalized penalty matrix provided.
+    \item Bug fix: correct stopping criterion for the IRLS algorithm of the penalized ridge logistic regression estimator.
+    \item Citations updated.
+  }
+}
+
 \section{Changes in version 0.2.1}{
  \itemize{
     \item Faster implementation of the functions for target and multi-targeted ridge estimation of the GLM offered.

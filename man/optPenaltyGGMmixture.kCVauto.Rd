@@ -81,11 +81,11 @@ Y <- rbind(mvtnorm::rmvnorm(sum(Z==1), mean=mean1, sigma=Sigma1),
            mvtnorm::rmvnorm(sum(Z==3), mean=mean3, sigma=Sigma3))
 
 # find optimal penalty parameter
-\donttest{optLambda <- optPenaltyGGMmixture.kCVauto(Y,  K,           }
-\donttest{                                          0.00001, 100,    }
-\donttest{                                          10, fold=5,      }
-\donttest{                                          target=0*Sigma1) }
+### optLambda <- optPenaltyGGMmixture.kCVauto(Y,  K=3,         
+###                                          0.00001, 100,    
+###                                          10, fold=5,      
+###                                          target=0*Sigma1) 
 
 # ridge penalized estimation of the GGM mixture
-\donttest{ridgeGGMmixFit <- ridgeGGMmixture(Y, 3, optLambda, target=0*Sigma1) }
+### ridgeGGMmixFit <- ridgeGGMmixture(Y, 3, optLambda, target=0*Sigma1) 
 }

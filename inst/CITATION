@@ -33,29 +33,57 @@ citEntry(entry="Article",
     title = "The generalized ridge estimator of the inverse covariance matrix",
     author = personList(as.person("W.N. van Wieringen")),
     journal = "Journal of Computational and Graphical Statistics",
-    volume = "", 
-    number = "", 
-    pages =  "",
+    volume = "28", 
+    number = "4", 
+    pages =  "932-942",
     year = 2019,
     textVersion =
       paste("van Wieringen, W.N. (2019). ",
 		"The generalized ridge estimator of the inverse covariance matrix. ", 
-        	"Journal of Computational and Graphical Statistics", sep = "")
+        	"Journal of Computational and Graphical Statistics, 28(4), 932-942.", sep = "")
+
+)
+
+citEntry(entry="Article",
+    title = "Lecture notes on ridge regression",
+    author = personList(as.person("W.N. van Wieringen")),
+    journal = "Arxiv preprint",
+    volume  = "arXiv:1509.09169",
+    year = 2021,
+    textVersion =
+      paste("van Wieringen, W.N. (2019). ",
+		"Lecture notes on ridge regression. ", 
+        	"arXiv preprint, arXiv:1509.09169.", sep = "")
 
 )
 
 citEntry(entry="Article",
     title = "Penalized estimation of the Gaussian graphical model from data with replicates",
     author = personList(as.person("W.N. van Wieringen"), as.person("Y. Chen")),
-    journal = "submitted",
-    volume = "", 
-    number = "", 
-    pages =  "",
-    year = 2019,
+    journal = "Statistics in Medicine",
+    volume = "40", 
+    number = "19", 
+    pages =  "4279-4293",
+    year = 2021,
     textVersion =
-      paste("van Wieringen, W.N., Chen, Y. (2019). ",
+      paste("van Wieringen, W.N., Chen, Y. (2021). ",
 		"Penalized estimation of the Gaussian graphical model from data with replicates. ", 
-        	"submitted", sep = "")
+        	"Statistics in Medicine, 40(19), 4279-4293", sep = "")
 
 )
+
+citEntry(entry="Article",
+    title = "Updating of the Gaussian graphical model through targeted penalized estimation",
+    author = personList(as.person("W.N. van Wieringen"), as.person("K.A. Stam"), as.person("C.F.W. Peeters"), as.person("M.A. van de Wiel")),
+    journal = "Journal of Multivariate Analysis",
+    volume = "178", 
+    number = "article 104621", 
+    year = 2020,
+    textVersion =
+      paste("van Wieringen, W.N., Stam, K.A., Peeters, C.F.W., van de Wiel, M.A. (2020). ",
+		"Updating of the Gaussian graphical model through targeted penalized estimation.", 
+        	"Journal of Multivariate Analysis, 178, article 104621", sep = "")
+
+)
+
 

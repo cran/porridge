@@ -10,20 +10,20 @@ optimum is defined as the minimizer of the cross-validated loss
 associated with the estimator. 
 }
 \usage{
-optPenaltyGLMmultiT.kCVauto(Y, X, lambdasInit, fold=nrow(X), 
-                      stratified=TRUE,
-                      targetMat, model, loss="loglik",
-                      minSuccDiff=10^(-5), maxIter=100)
+optPenaltyGLMmultiT.kCVauto(Y, X, lambdaInit, model="linear", targetMat,
+                      folds=makeFoldsGLMcv(min(10, length(X)), Y, model=model),
+                      loss="loglik", lambdaMin=10^(-5),
+                      minSuccDiff=10^(-5), maxIter=100)     
 }
 \arguments{
 \item{Y}{           A \code{numeric} being the response vector. }
 \item{X}{           The design \code{matrix}. The number of rows should match the number of elements of \code{Y}. }
-\item{lambdasInit}{ A \code{numeric} giving the starting values for the penalty parameters. }
-\item{fold}{ A \code{numeric} or \code{integer} specifying the number of folds to apply in the cross-validation. }
-\item{stratified}{ A \code{logical}, should the data by stratified such that range of the response is comparable among folds? }
-\item{targetMat}{   A \code{matrix} with targets for the regression parameter as columns. }
+\item{lambdaInit}{  A \code{numeric} giving the starting values for search of the optimal penalty parameter. }
 \item{model}{       A \code{character}, either \code{"linear"} and \code{"logistic"} (a reference to the models currently implemented), indicating which generalized linear model model instance is to be fitted. }
-\item{loss}{        A \code{numeric}, loss criterion to be used in the cross-validation. Used only if \code{model="linear"}. }
+\item{targetMat}{   A \code{matrix} with targets for the regression parameter as columns. }
+\item{folds}{       A \code{list}. Each list item representing a fold. It is an \code{integer} vector indexing the samples that comprise the fold. This object can be generated with the \code{makeFoldsGLMcv} function. }
+\item{loss}{        A \code{character}, either \code{loss="loglik"} or \code{"sos"}, specifying loss criterion to be used in the cross-validation. Used only if \code{model="linear"}. }
+\item{lambdaMin }{ A positive \code{numeric}, the lower bound of search interval of the regular ridge penalty parameter. }
 \item{minSuccDiff}{ A \code{numeric}, the minimum distance between the loglikelihoods of two successive iterations to be achieved. Used only if \code{model="logistic"}. }
 \item{maxIter}{     A \code{numeric} specifying the maximum number of iterations. Used only if \code{model="logistic"}. }
 }
@@ -57,11 +57,12 @@ for (i in 1:n){
 targets <- cbind(betas/2, rep(0, length(betas)))
 
 # tune the penalty parameter
-\donttest{optLambdas <- optPenaltyGLMmultiT.kCVauto(Y, X, c(50,0.1), fold=5,             }
-\donttest{                                          targetMat=targets, model="logistic", }
-\donttest{                                          minSuccDiff=10^(-3))                 } 
+### optLambdas <- optPenaltyGLMmultiT.kCVauto(Y, X, c(50,0.1), fold=5,            
+###                                           targetMat=targets, model="logistic", 
+###                                           minSuccDiff=10^(-3))                  
 
 # estimate the logistic regression parameter
-\donttest{bHat <- ridgeGLMmultiT(Y, X, optLambdas, targetMat=targets, model="logistic") }
+### bHat <- ridgeGLMmultiT(Y, X, lambdas=optLambdas, targetMat=targets, model="logistic") 
 }
+
 

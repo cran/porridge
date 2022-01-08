@@ -1,8 +1,8 @@
 importFrom(MASS, ginv)
 
-importFrom(stats, optim, optimize)
+importFrom(stats, optim, optimize, constrOptim)
 
-importFrom(stats, constrOptim)
+importFrom(Matrix, bandSparse)
 
 importFrom(mvtnorm, rmvnorm)
 

@@ -7,13 +7,15 @@ Multi-targeted ridge estimation of generalized linear models.
 Function that evaluates the multi-targeted ridge estimator of the regression parameter of generalized linear models. 
 }
 \usage{
-ridgeGLMmultiT(Y, X, lambdas, targetMat, model, 
+ridgeGLMmultiT(Y, X, U=matrix(ncol=0, nrow=length(Y)), 
+               lambdas, targetMat, model="linear", 
                minSuccDiff=10^(-10), maxIter=100)
 }
 \arguments{
 \item{Y}{           A \code{numeric} being the response vector. }
-\item{X}{           The design \code{matrix}. The number of rows should match the number of elements of \code{Y}. }
-\item{lambdas}{     A positive \code{numeric}, vector of penalty parameters, one per target. }
+\item{X}{           The design \code{matrix} of the penalized covariates. The number of rows should match the number of elements of \code{Y}. }
+\item{U}{           The design \code{matrix} of the unpenalized covariates. The number of rows should match the number of elements of \code{Y}. }
+\item{lambdas}{     An all-positive \code{numeric}, vector of penalty parameters, one per target. }
 \item{targetMat}{   A \code{matrix} with targets for the regression parameter as columns. }
 \item{model}{       A \code{character}, either \code{"linear"} and \code{"logistic"} (a reference to the models currently implemented), indicating which generalized linear model model instance is to be fitted. }
 \item{minSuccDiff}{ A \code{numeric}, the minimum distance between the loglikelihoods of two successive iterations to be achieved. Used only if \code{model="logistic"}. }
@@ -52,6 +54,6 @@ for (i in 1:n){
 lambdas <- c(1,3)
 
 # estimate the logistic regression parameter
-bHat <- ridgeGLMmultiT(Y, X, lambdas, model="logistic",
-                       targetMat=cbind(betas/2, rnorm(length(betas))))
+# bHat <- ridgeGLMmultiT(Y, X, lambdas, model="logistic",
+#                       targetMat=cbind(betas/2, rnorm(length(betas))))
 }

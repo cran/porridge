@@ -27,10 +27,10 @@ optPenaltyPrepEdiag.kCVauto(Y, ids, lambdaInit,
 \item{minSuccDiff}{ A \code{numeric}: minimum successive difference (in terms of the relative change in the absolute difference of the penalized loglikelihood) between two succesive estimates to be achieved. }
 }
 \value{
-The function returns a all-positive \code{numeric}, the cross-validated optimal penalty parameters.
+The function returns an all-positive \code{numeric}, the cross-validated optimal penalty parameters.
 }
 \references{
-van Wieringen, W.N., Chen, Y. (2019), "Penalized estimation of the Gaussian graphical model from data with replicates", \emph{submitted}.
+van Wieringen, W.N., Chen, Y. (2021), "Penalized estimation of the Gaussian graphical model from data with replicates", \emph{Statistics in Medicine}, 40(19), 4279-4293.
 }
 \author{
 W.N. van Wieringen.
@@ -59,12 +59,12 @@ for (i in 1:n){
 }
 
 # find optimal penalty parameters
-\donttest{optLambdas <- optPenaltyPrepEdiag.kCVauto(Y, ids,             }
-\donttest{                                          lambdaInit=c(1,1),  }
-\donttest{                                          fold=nrow(Y),       }
-\donttest{                                          CVcrit="LL")        }
+### optLambdas <- optPenaltyPrepEdiag.kCVauto(Y, ids,             
+###                                           lambdaInit=c(1,1),  
+###                                           fold=nrow(Y),       
+###                                           CVcrit="LL")        
 
 # estimate the precision matrices
-\donttest{Ps <- ridgePrepEdiag(Y, ids, optLambdas[1], optLambdas[2])    }
+### Ps <- ridgePrepEdiag(Y, ids, optLambdas[1], optLambdas[2])    
 }
 

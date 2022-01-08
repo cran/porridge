@@ -33,7 +33,7 @@ The function returns the regularized inverse covariance \code{list}-object with 
 W.N. van Wieringen.
 }
 \references{
-van Wieringen, W.N., Chen, Y. (2019), "Penalized estimation of the Gaussian graphical model from data with replicates", \emph{submitted}.
+van Wieringen, W.N., Chen, Y. (2021), "Penalized estimation of the Gaussian graphical model from data with replicates", \emph{Statistics in Medicine}, 40(19), 4279-4293.
 }
 \seealso{
 \code{optPenaltyPrepEdiag.kCVauto}
