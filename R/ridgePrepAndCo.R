@@ -41,10 +41,10 @@ ridgePrep <- function(Y,
 	if (!is(Y, "matrix")){  
 		stop("Input (Y) should be a matrix")
 	}
-	if (class(ids) != "numeric" & class(ids) != "integer"){
+	if (!inherits(ids, "numeric") & !inherits(ids, "integer")){
 		stop("Input (ids) is of wrong class") 
 	}
-	if (as.character(class(lambdaZ)) != "numeric"){ 
+	if (!inherits(lambdaZ, "numeric")){ 
 		stop("Input (lambdaZ) is of wrong class.") 
 	}
 	if (length(lambdaZ) != 1){ 
@@ -56,7 +56,7 @@ ridgePrep <- function(Y,
 	if (lambdaE <= 0){ 
 		stop("Input (lambdaE) is not a positive number.") 
 	}
-	if (as.character(class(lambdaE)) != "numeric"){ 
+	if (!inherits(lambdaE, "numeric")){ 
 		stop("Input (lambdaE) is of wrong class.") 
 	}
 	if (length(lambdaE) != 1){ 
@@ -86,7 +86,7 @@ ridgePrep <- function(Y,
 	if (dim(Y)[2] != ncol(targetE)){ 
 		stop("Dimensions of input (targetE) do not match that of other input (Y).")  
 	}
-	if (class(nInit) != "numeric" & class(nInit) != "integer"){
+	if (!inherits(nInit, "numeric") & !inherits(nInit, "integer")){
 		stop("Input (nInit) is of wrong class") 
 	}
 	if (nInit <  1){ 
@@ -150,10 +150,10 @@ ridgePrepEdiag <- function(Y,
 	if (!is(Y, "matrix")){  
 		stop("Input (Y) should be a matrix")
 	}
-	if (class(ids) != "numeric" & class(ids) != "integer"){
+	if (!inherits(ids, "numeric") & !inherits(ids, "integer")){
 		stop("Input (ids) is of wrong class") 
 	}
-	if (as.character(class(lambdaZ)) != "numeric"){ 
+	if (!inherits(lambdaZ, "numeric")){ 
 		stop("Input (lambdaZ) is of wrong class.") 
 	}
 	if (length(lambdaZ) != 1){ 
@@ -171,7 +171,7 @@ ridgePrepEdiag <- function(Y,
 	if (dim(Y)[2] != ncol(targetZ)){ 
 		stop("Dimensions of input (targetZ) do not match that of other input (Y).")  
 	}
-	if (class(nInit) != "numeric" & class(nInit) != "integer"){
+	if (!inherits(nInit, "numeric") & !inherits(nInit, "integer")){
 		stop("Input (nInit) is of wrong class") 
 	}
 	if (nInit <  1){ 
@@ -252,7 +252,7 @@ optPenaltyPrep.kCVauto <- function(Y,
 	if (!is(Y, "matrix")){  
 		stop("Input (Y) should be a matrix")
 	}
-	if (class(ids) != "numeric" & class(ids) != "integer"){
+	if (!inherits(ids, "numeric") & !inherits(ids, "integer")){
 		stop("Input (ids) is of wrong class") 
 	}
 	if (!is(targetZ, "matrix")){  
@@ -273,7 +273,7 @@ optPenaltyPrep.kCVauto <- function(Y,
 	if (dim(Y)[2] != ncol(targetE)){ 
 		stop("Dimensions of input (targetE) do not match that of other input (Y).")  
 	}
-	if (class(nInit) != "numeric" & class(nInit) != "integer"){
+	if (!inherits(nInit, "numeric") & !inherits(nInit, "integer")){
 		stop("Input (nInit) is of wrong class") 
 	}
 	if (nInit <=  1){ 
@@ -294,19 +294,19 @@ optPenaltyPrep.kCVauto <- function(Y,
 	if (!all(lambdaInit > 0)){ 
 		stop("Input (lambdaInit) must element-wise be positive") 
 	}
-	if (class(fold) != "numeric" & class(fold) != "integer"){
+	if (!inherits(fold, "numeric") & !inherits(fold, "integer")){
 		stop("Input (fold) is of wrong class") 
 	}
 	if ((fold <=  1) | (fold > nrow(Y))){ 
 		stop("Input (fold) out of range") 
 	}
-	if (class(CVcrit) != "character"){ 
+	if (!inherits(CVcrit, "character")){
 		stop("Input (CVcrit) is of wrong class") 
 	}
 	if (length(intersect(CVcrit, c("LL", "compLL", "Qloss", "Qloss2" )))!=1){ 
 		stop("Input (CVcrit) is wrongly specified") 
 	}
-	if (class(splitting) != "character"){ 
+	if (!inherits(splitting, "character")){ 
 		stop("Input (splitting) is of wrong class") 
 	}
 	if (length(intersect(splitting, c("stratified", "replications", "samples")))!=1){ 
@@ -408,7 +408,7 @@ optPenaltyPrepEdiag.kCVauto <- function(Y,
 	if (!is(Y, "matrix")){  
 		stop("Input (Y) should be a matrix")
 	}
-	if (class(ids) != "numeric" & class(ids) != "integer"){
+	if (!inherits(ids, "numeric") & !inherits(ids, "integer")){
 		stop("Input (ids) is of wrong class") 
 	}
 	if (!is(targetZ, "matrix")){  
@@ -420,7 +420,7 @@ optPenaltyPrepEdiag.kCVauto <- function(Y,
 	if (dim(Y)[2] != ncol(targetZ)){ 
 		stop("Dimensions of input (targetZ) do not match that of other input (Y).")  
 	}
-	if (class(nInit) != "numeric" & class(nInit) != "integer"){
+	if (!inherits(nInit, "numeric") & !inherits(nInit, "integer")){
 		stop("Input (nInit) is of wrong class") 
 	}
 	if (nInit <=  1){ 
@@ -441,19 +441,19 @@ optPenaltyPrepEdiag.kCVauto <- function(Y,
 	if (!all(lambdaInit > 0)){ 
 		stop("Input (lambdaInit) must element-wise be positive") 
 	}
-	if (class(fold) != "numeric" & class(fold) != "integer"){
+	if (!inherits(fold, "numeric") & !inherits(fold, "integer")){
 		stop("Input (fold) is of wrong class") 
 	}
 	if ((fold <=  1) | (fold > nrow(Y))){ 
 		stop("Input (fold) out of range") 
 	}
-	if (class(CVcrit) != "character"){ 
+	if (!inherits(CVcrit, "character")){ 
 		stop("Input (CVcrit) is of wrong class") 
 	}
 	if (length(intersect(CVcrit, c("LL", "compLL", "Qloss", "Qloss2")))!=1){ 
 		stop("Input (CVcrit) is wrongly specified") 
 	}
-	if (class(splitting) != "character"){ 
+	if (!inherits(splitting, "character")){ 
 		stop("Input (splitting) is of wrong class") 
 	}
 	if (length(intersect(splitting, c("stratified", "replications", "samples")))!=1){ 

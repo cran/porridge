@@ -2,9 +2,19 @@
 \title{News for Package \pkg{porridge}}
 \newcommand{\cpkg}{\href{http://cran.r-project.org/package=#1}{\pkg{#1}}}
 
+\section{Changes in version 0.3.1}{
+ \itemize{
+    \item Bug fix: incorrectly placed bracket on the C++ part of the \code{ridgeGGMmixture}-function assigned to its proper spot.
+    \item Extra input check in the \code{ridgePgen.kCV.groups}-function.
+    \item Citations updated.
+    \item To fix a note of CRAN's check results the \code{rags2ridges}- and \code{ragt2ridges}-packages are added to \code{Suggests} in the \code{Description}-file.
+    \item Input checks are now performed by means the \code{inherits}-function instead of the \code{class}-function.
+  }
+}
+
 \section{Changes in version 0.3.0}{
  \itemize{
-    \item Functionality of the \code{ridgeGLM} and \code{optPenaltyGLM.kCVauto} expanded. Among other, unpenalized covariates may now be supplied and a generalized penalty matrix provided.
+    \item Functionality of the \code{ridgeGLM} and \code{optPenaltyGLM.kCVauto} expanded. Among others, unpenalized covariates may now be supplied and a generalized penalty matrix provided.
     \item Bug fix: correct stopping criterion for the IRLS algorithm of the penalized ridge logistic regression estimator.
     \item Citations updated.
   }

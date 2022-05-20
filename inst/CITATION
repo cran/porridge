@@ -44,6 +44,8 @@ citEntry(entry="Article",
 
 )
 
+
+
 citEntry(entry="Article",
     title = "Lecture notes on ridge regression",
     author = personList(as.person("W.N. van Wieringen")),
@@ -56,6 +58,23 @@ citEntry(entry="Article",
         	"arXiv preprint, arXiv:1509.09169.", sep = "")
 
 )
+
+
+citEntry(entry="Article",
+    title = "Sequential learning of regression models by penalized estimation",
+    author = personList(as.person("W.N. van Wieringen"), as.person("H. Binder")),
+    journal = "Journal of Computational and Graphical Statistics",
+    volume = "", 
+    number = "", 
+    pages =  "",
+    year = 2022,
+    textVersion =
+      paste("van Wieringen, W.N., Binder, H. (2022). ",
+		"Sequential learning of regression models by penalized estimation. ", 
+        	"Journal of Computational and Graphical Statistics, accepted.", sep = "")
+
+)
+
 
 citEntry(entry="Article",
     title = "Penalized estimation of the Gaussian graphical model from data with replicates",

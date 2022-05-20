@@ -10,10 +10,10 @@ Function that evaluates the targeted ridge estimator of the regression parameter
 makeFoldsGLMcv(fold, Y, stratified=TRUE, model="linear")
 }
 \arguments{
-\item{fold}{        An \code{integer}, the number of folds to be generated. }
-\item{Y}{           A \code{numeric} being the response vector. }
-\item{stratified}{   A \code{logical}. If \code{stratified=TRUE}, the folds are generated such the distribution of the response \code{Y} is (roughly) the same across folds. }
-\item{model}{       A \code{character}, either \code{"linear"} and \code{"logistic"} (a reference to the models currently implemented), indicative of the type of response for stratification. }
+\item{fold}{ An \code{integer}, the number of folds to be generated. }
+\item{Y}{ A \code{numeric} being the response vector. }
+\item{stratified}{ A \code{logical}. If \code{stratified=TRUE}, the folds are generated such the distribution of the response \code{Y} is (roughly) the same across folds. }
+\item{model}{ A \code{character}, either \code{"linear"} and \code{"logistic"} (a reference to the models currently implemented), indicative of the type of response for stratification. }
 }
 \value{
 A \code{list} of length \code{fold}. Each list item is a fold.

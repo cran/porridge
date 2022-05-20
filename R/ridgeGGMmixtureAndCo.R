@@ -46,13 +46,13 @@ ridgeGGMmixture <- function(Y,
 	if (!is(Y, "matrix")){  
 		stop("Input (Y) should be a matrix")
 	}
-	if (class(K) != "numeric" & class(K) != "integer"){
+	if (!inherits(K, "numeric") & !inherits(K, "integer")){
 		stop("Input (K) is of wrong class") 
 	}
 	if ((K <=  1) | (K > nrow(Y))){ 
 		stop("Input (K) out of range") 
 	}
-	if (as.character(class(lambda)) != "numeric"){ 
+	if (!inherits(lambda, "numeric")){ 
 		stop("Input (lambda) is of wrong class.") 
 	}
 	if (length(lambda) != 1){ 
@@ -82,7 +82,7 @@ ridgeGGMmixture <- function(Y,
 	if (K != ncol(iWeights)){ 
 		stop("Dimensions of input (iWeights) do not match that of other input (K).")  
 	}
-	if (class(nInit) != "numeric" & class(nInit) != "integer"){
+	if (!inherits(nInit, "numeric") & !inherits(nInit, "integer")){
 		stop("Input (nInit) is of wrong class") 
 	}
 	if (nInit <=  1){ 
@@ -172,13 +172,13 @@ optPenaltyGGMmixture.kCVauto <- function(Y,
 	if (!is(Y, "matrix")){  
 		stop("Input (Y) should be a matrix")
 	}
-	if (class(K) != "numeric" & class(K) != "integer"){
+	if (!inherits(K, "numeric") & !inherits(K, "integer")){
 		stop("Input (K) is of wrong class") 
 	}
 	if ((K <=  1) | (K > nrow(Y))){ 
 		stop("Input (K) out of range") 
-	}
-	if (class(lambdaMin) != "numeric"){ 
+	}	
+	if (!inherits(lambdaMin, "numeric")){ 
 		stop("Input (lambdaMin) is of wrong class") 
 	}
 	if (length(lambdaMin) != 1){ 
@@ -187,7 +187,7 @@ optPenaltyGGMmixture.kCVauto <- function(Y,
 	if (lambdaMin <= 0){ 
 		stop("Input (lambdaMin) must be positive") 
 	}
-	if (class(lambdaMax) != "numeric"){ 
+	if (!inherits(lambdaMax, "numeric")){ 
 		stop("Input (lambdaMax) is of wrong class") 
 	}
 	if (length(lambdaMax) != 1){ 
@@ -196,7 +196,7 @@ optPenaltyGGMmixture.kCVauto <- function(Y,
 	if (lambdaMax <= lambdaMin){ 
 		stop("Input (lambdaMax) must be larger than lambdaMin") 
 	}
-	if (class(lambdaInit) != "numeric"){ 
+	if (!inherits(lambdaInit, "numeric")){ 
 		stop("Input (lambdaInit) is of wrong class") 
 	}
 	if (length(lambdaInit) != 1){ 
@@ -208,7 +208,7 @@ optPenaltyGGMmixture.kCVauto <- function(Y,
 	if (lambdaInit > lambdaMax){ 
 		stop("Input (lambdaInit) must be smaller than lambdaMax") 
 	}
-	if (class(fold) != "numeric" & class(fold) != "integer"){
+	if (!inherits(fold, "numeric") & !inherits(fold, "integer")){
 		stop("Input (fold) is of wrong class") 
 	}
 	if ((fold <=  1) | (fold > nrow(Y))){ 

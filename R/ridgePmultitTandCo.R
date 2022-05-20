@@ -45,7 +45,7 @@ ridgePmultiT <- function(S, lambda, targetList){
 
 	# input checks
 	if (!is(S, "matrix")){ stop("Input (S) should be a matrix") }
-	if (as.character(class(lambda)) != "numeric"){ stop("Input (lambda) is of wrong class.")  }
+	if (!inherits(lambda, "numeric")){ stop("Input (lambda) is of wrong class.")  }
 	if (length(lambda) <= 1){ stop("Input (lambda) is of wrong length.") }
 	if (any(is.na(lambda))){ stop("Input (lambda) contains a nonpositive number.") }
 	if (any(lambda <= 0)){ stop("Input (lambda) contains a nonpositive number.") }
@@ -96,19 +96,19 @@ optPenaltyPmultiT.kCVauto <- function(Y,
 
 	# input checks
 	if (!is(Y, "matrix")){ stop("Input (Y) should be a matrix") }
-	if (as.character(class(lambdaInit)) != "numeric"){ stop("Input (lambdaInit) is of wrong class.")  }
+	if (!inherits(lambdaInit, "numeric")){ stop("Input (lambdaInit) is of wrong class.")  }
 	if (length(lambdaInit) <= 1){ stop("Input (lambdaInit) is of wrong length.") }
 	if (any(is.na(lambdaInit))){ stop("Input (lambdaInit) contains a nonpositive number.") }
 	if (any(lambdaInit <= 0)){ stop("Input (lambdaInit) contains a nonpositive number.") }
-	if (as.character(class(lambdaMin)) != "numeric"){ stop("Input (lambdaMin) is of wrong class.")  }
+	if (!inherits(lambdaMin, "numeric")){ stop("Input (lambdaMin) is of wrong class.")  }
 	if (length(lambdaMin) <= 1){ stop("Input (lambdaMin) is of wrong length.") }
 	if (any(is.na(lambdaMin))){ stop("Input (lambdaMin) contains a nonpositive number.") }
 	if (any(lambdaMin <= 0)){ stop("Input (lambdaMin) contains a nonpositive number.") }
-	if (as.character(class(lambdaMax)) != "numeric"){ stop("Input (lambdaMax) is of wrong class.")  }
+	if (!inherits(lambdaMax, "numeric")){ stop("Input (lambdaMax) is of wrong class.")  }
 	if (length(lambdaMax) <= 1){ stop("Input (lambdaMax) is of wrong length.") }
 	if (any(is.na(lambdaMax))){ stop("Input (lambdaMax) contains a nonpositive number.") }
 	if (any(lambdaMax <= 0)){ stop("Input (lambdaMax) contains a nonpositive number.") }
-	if (class(fold) != "numeric" & class(fold) != "integer"){ stop("Input (fold) is of wrong class") }
+	if (!inherits(fold, "numeric") & !inherits(fold, "integer")){ stop("Input (fold) is of wrong class") }
 	if ((fold <=  1) | (fold > nrow(Y))){ stop("Input (fold) out of range") }
 	if (!is(targetList, "list")){ stop("Input (targetList) is of wrong class.") }
 	if (length(targetList) != length(lambdaInit)){ stop("Arguments (lambdaInit & targetList) do not match") }

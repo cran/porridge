@@ -34,7 +34,7 @@ The penalized IRLS (Iterative Reweighted Least Squares) algorithm for the evalua
 A \code{numeric}, the generalized ridge estimate of the regression parameter. If a nonempty \eqn{\mathbf{U}} is supplied, the first few elements are the unpenalized effect estimates of the covariates that comprise this design matrix.
 } 
 \references{
-van Wieringen, W.N. Binder, H. (2020), "Online learning of regression models from a sequence of datasets by penalized estimation", \emph{submitted}.
+van Wieringen, W.N. Binder, H. (2022), "Sequential learning of regression models by penalized estimation", \emph{submitted}.
 
 Lettink, A., Chinapaw, M.J.M., van Wieringen, W.N. (2022), "Two-dimensional fused targeted ridge regression for health indicator prediction from accelerometer data", \emph{submitted}.
 }

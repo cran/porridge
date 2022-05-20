@@ -5,11 +5,11 @@ ridgePgen <- function(S, lambda, target, nInit=100, minSuccDiff=10^(-10)){
 	if (!isSymmetric(S)){ stop("S should be a symmetric matrix") }
 	if (!isSymmetric(lambda)){ stop("lambda should be a symmetric matrix") }
 	if (!isSymmetric(target)){ stop("target should be a symmetric matrix") }
-	if (as.character(class(minSuccDiff)) != "numeric"){ stop("Input (llDiff) is of wrong class.") }
+	if (!inherits(minSuccDiff, "numeric")){ stop("Input (llDiff) is of wrong class.") }
 	if (length(minSuccDiff) != 1){ stop("Input (minSuccDiff) is of wrong length.") }
 	if (is.na(minSuccDiff)){ stop("Input (minSuccDiff) is not a positive number.") }
 	if (minSuccDiff <= 0){ stop("Input (minSuccDiff) is not a positive number.") }
-	if (as.character(class(nInit)) != "numeric" & as.character(class(nInit)) !=  "integer"){ stop("Input (nInit) is of wrong class.") }
+	if (!inherits(nInit, "numeric") & !inherits(nInit, "integer")){ stop("Input (nInit) is of wrong class.") }
 	if (length(nInit) != 1){ stop("Input (nInit) is of wrong length.") }
 	if (is.na(nInit)){ stop("Input (nInit) is not a positive integer.") }
 	if (nInit < 0){ stop("Input (nInit) is not a positive integer.") }
@@ -64,7 +64,7 @@ ridgePgen.kCV <- function(lambda,
 	if (any(lambda <= 0)){ 
 		stop("Input (lambda) must be positive") 
 	}
-	if (class(fold) != "numeric" & class(fold) != "integer"){
+	if (!inherits(fold, "numeric") & !inherits(fold, "integer")){
 		stop("Input (fold) is of wrong class") 
 	}
 	if ((fold <=  1) | (fold > nrow(Y))){ 
@@ -73,19 +73,19 @@ ridgePgen.kCV <- function(lambda,
 	if (!isSymmetric(target)){ 
 	    stop("target should be a symmetric matrix") 
 	}
-	if (as.character(class(minSuccDiff)) != "numeric"){ 
+	if (!inherits(minSuccDiff, "numeric")){ 
 	        stop("Input (minSuccDiff) is of wrong class.") 
 	}
 	if (length(minSuccDiff) != 1){ 
 	    stop("Input (minSuccDiff) is of wrong length.") 
-    }
+	}
 	if (is.na(minSuccDiff)){ 
 	    stop("Input (minSuccDiff) is not a positive number.") 
 	}
 	if (minSuccDiff <= 0){ 
 	    stop("Input (minSuccDiff) is not a positive number.") 
-	}
-	if (as.character(class(nInit)) != "numeric" & as.character(class(nInit)) !=  "integer"){ 
+	}	
+	if (!inherits(nInit, "numeric") & !inherits(nInit, "integer")){ 
 	    stop("Input (nInit) is of wrong class.") 
 	}
 	if (length(nInit) != 1){ 
@@ -159,7 +159,7 @@ ridgePgen.kCV.banded <- function(lambda,
 	if (!is(Y, "matrix")){  
 		stop("Input (Y) should be a matrix")
 	}
-	if (class(lambda) != "numeric"){ 
+	if (!inherits(lambda, "numeric")){ 
 		stop("Input (lambda) is of wrong class") 
 	}
 	if (length(lambda) < 1){ 
@@ -168,7 +168,7 @@ ridgePgen.kCV.banded <- function(lambda,
 	if (any(lambda <= 0)){ 
 		stop("Input (lambda) must be positive") 
 	}
-	if (class(fold) != "numeric" & class(fold) != "integer"){
+	if (!inherits(fold, "numeric") & !inherits(fold, "integer")){ 
 		stop("Input (fold) is of wrong class") 
 	}
 	if ((fold <=  1) | (fold > nrow(Y))){ 
@@ -177,19 +177,19 @@ ridgePgen.kCV.banded <- function(lambda,
 	if (!isSymmetric(target)){ 
 	    stop("target should be a symmetric matrix") 
 	}
-	if (as.character(class(minSuccDiff)) != "numeric"){ 
+	if (!inherits(minSuccDiff, "numeric")){ 
 	        stop("Input (minSuccDiff) is of wrong class.") 
 	}
 	if (length(minSuccDiff) != 1){ 
 	    stop("Input (minSuccDiff) is of wrong length.") 
-    }
+	}
 	if (is.na(minSuccDiff)){ 
 	    stop("Input (minSuccDiff) is not a positive number.") 
 	}
 	if (minSuccDiff <= 0){ 
 	    stop("Input (minSuccDiff) is not a positive number.") 
 	}
-	if (as.character(class(nInit)) != "numeric" & as.character(class(nInit)) !=  "integer"){ 
+	if (!inherits(nInit, "numeric") & !inherits(nInit, "integer")){ 
 	    stop("Input (nInit) is of wrong class.") 
 	}
 	if (length(nInit) != 1){ 
@@ -210,7 +210,7 @@ ridgePgen.kCV.banded <- function(lambda,
 	if(ncol(zeros) != 2){ 
 	        stop("Wrong dimensions of the (zeros).") 
 	} 
-	if (as.character(class(penalize.diag)) != "logical"){ 
+	if (!inherits(penalize.diag, "logical")){ 
 	    stop("Input (penalize.diag) is of wrong class.") 
 	}    
 
@@ -280,7 +280,7 @@ ridgePgen.kCV.groups <- function(lambdaGrps,
 	if (!is(Y, "matrix")){  
 		stop("Input (Y) should be a matrix")
 	}
-	if (class(lambdaGrps) != "numeric"){ 
+	if (!inherits(lambdaGrps, "numeric")){ 
 		stop("Input (lambdaGrps) is of wrong class") 
 	}
 	if (length(lambdaGrps) < 1){ 
@@ -289,34 +289,37 @@ ridgePgen.kCV.groups <- function(lambdaGrps,
 	if (any(lambdaGrps <= 0)){ 
 		stop("Input (lambdaGrps) must be positive") 
 	}
-	if (class(fold) != "numeric" & class(fold) != "integer"){
+	if (!inherits(fold, "numeric") & !inherits(fold, "integer")){ 
 		stop("Input (fold) is of wrong class") 
 	}
 	if ((fold <=  1) | (fold > nrow(Y))){ 
 		stop("Input (fold) out of range") 
 	}
-	if (class(groups) != "numeric" & class(groups) != "integer" & class(groups) != "character"){
+	if (!inherits(groups, "numeric") & !inherits(groups, "integer") & !inherits(groups, "character")){
 		stop("Input (groups) is of wrong class") 
 	}
 	if ((length(groups) <=  1) | (length(groups) > ncol(Y))){ 
 		stop("Input (groups) out of range") 
 	}
+	if (length(groups) !=  length(lambdaGrps)){ 
+		stop("Input (groups) out of range") 
+	}
 	if (!isSymmetric(target)){ 
 	    stop("target should be a symmetric matrix") 
 	}
-	if (as.character(class(minSuccDiff)) != "numeric"){ 
+	if (!inherits(minSuccDiff, "numeric")){ 
 	        stop("Input (minSuccDiff) is of wrong class.") 
 	}
 	if (length(minSuccDiff) != 1){ 
 	    stop("Input (minSuccDiff) is of wrong length.") 
-    }
+	}
 	if (is.na(minSuccDiff)){ 
 	    stop("Input (minSuccDiff) is not a positive number.") 
 	}
 	if (minSuccDiff <= 0){ 
 	    stop("Input (minSuccDiff) is not a positive number.") 
 	}
-	if (as.character(class(nInit)) != "numeric" & as.character(class(nInit)) !=  "integer"){ 
+	if (!inherits(nInit, "numeric") & !inherits(nInit, "integer")){ 
 	    stop("Input (nInit) is of wrong class.") 
 	}
 	if (length(nInit) != 1){ 
@@ -337,7 +340,7 @@ ridgePgen.kCV.groups <- function(lambdaGrps,
 	if(ncol(zeros) != 2){ 
 	        stop("Wrong dimensions of the (zeros).") 
 	} 
-	if (as.character(class(penalize.diag)) != "logical"){ 
+	if (!inherits(penalize.diag, "logical")){ 
 	    stop("Input (penalize.diag) is of wrong class.") 
 	}    
 
@@ -409,7 +412,7 @@ optPenaltyPgen.kCVauto.banded <- function(Y,
 	if (!is(Y, "matrix")){  
 		stop("Input (Y) should be a matrix")
 	}
-	if (class(lambdaMin) != "numeric"){ 
+	if (!inherits(lambdaMin, "numeric")){ 
 		stop("Input (lambdaMin) is of wrong class") 
 	}
 	if (length(lambdaMin) < 1){ 
@@ -418,7 +421,7 @@ optPenaltyPgen.kCVauto.banded <- function(Y,
 	if (any(lambdaMin <= 0)){ 
 		stop("Input (lambdaMin) must be positive") 
 	}
-	if (class(lambdaMax) != "numeric"){ 
+	if (!inherits(lambdaMax, "numeric")){ 
 		stop("Input (lambdaMax) is of wrong class") 
 	}
 	if (length(lambdaMax) < 1){ 
@@ -427,7 +430,7 @@ optPenaltyPgen.kCVauto.banded <- function(Y,
 	if (any(lambdaMax <= lambdaMin)){ 
 		stop("Input (lambdaMax) must be larger than lambdaMin") 
 	}
-	if (class(lambdaInit) != "numeric"){ 
+	if (!inherits(lambdaInit, "numeric")){ 
 		stop("Input (lambdaInit) is of wrong class") 
 	}
 	if (length(lambdaInit) < 1){ 
@@ -439,7 +442,7 @@ optPenaltyPgen.kCVauto.banded <- function(Y,
 	if (any(lambdaInit > lambdaMax)){ 
 		stop("Input (lambdaInit) must be smaller than lambdaMax") 
 	}
-	if (class(fold) != "numeric" & class(fold) != "integer"){
+	if (!inherits(fold, "numeric") & !inherits(fold, "integer")){ 
 		stop("Input (fold) is of wrong class") 
 	}
 	if ((fold <=  1) | (fold > nrow(Y))){ 
@@ -448,19 +451,19 @@ optPenaltyPgen.kCVauto.banded <- function(Y,
 	if (!isSymmetric(target)){ 
 	    stop("target should be a symmetric matrix") 
 	}
-	if (as.character(class(minSuccDiff)) != "numeric"){ 
+	if (!inherits(minSuccDiff, "numeric")){ 
 	        stop("Input (minSuccDiff) is of wrong class.") 
 	}
 	if (length(minSuccDiff) != 1){ 
 	    stop("Input (minSuccDiff) is of wrong length.") 
-    }
+	}
 	if (is.na(minSuccDiff)){ 
 	    stop("Input (minSuccDiff) is not a positive number.") 
 	}
 	if (minSuccDiff <= 0){ 
 	    stop("Input (minSuccDiff) is not a positive number.") 
 	}
-	if (as.character(class(nInit)) != "numeric" & as.character(class(nInit)) !=  "integer"){ 
+	if (!inherits(nInit, "numeric") & !inherits(nInit, "integer")){ 
 	    stop("Input (nInit) is of wrong class.") 
 	}
 	if (length(nInit) != 1){ 
@@ -481,7 +484,7 @@ optPenaltyPgen.kCVauto.banded <- function(Y,
 	if(ncol(zeros) != 2){ 
 	        stop("Wrong dimensions of the (zeros).") 
 	} 
-	if (as.character(class(penalize.diag)) != "logical"){ 
+	if (!inherits(penalize.diag, "logical")){ 
 	    stop("Input (penalize.diag) is of wrong class.") 
 	}    
 
@@ -559,7 +562,7 @@ optPenaltyPgen.kCVauto.groups <- function(Y,
 	if (!is(Y, "matrix")){  
 		stop("Input (Y) should be a matrix")
 	}
-	if (class(lambdaMin) != "numeric"){ 
+	if (!inherits(lambdaMin, "numeric")){ 
 		stop("Input (lambdaMin) is of wrong class") 
 	}
 	if (length(lambdaMin) < 1){ 
@@ -568,7 +571,7 @@ optPenaltyPgen.kCVauto.groups <- function(Y,
 	if (any(lambdaMin <= 0)){ 
 		stop("Input (lambdaMin) must be positive") 
 	}
-	if (class(lambdaMax) != "numeric"){ 
+	if (!inherits(lambdaMax, "numeric")){ 
 		stop("Input (lambdaMax) is of wrong class") 
 	}
 	if (length(lambdaMax) < 1){ 
@@ -577,7 +580,7 @@ optPenaltyPgen.kCVauto.groups <- function(Y,
 	if (any(lambdaMax <= lambdaMin)){ 
 		stop("Input (lambdaMax) must be larger than lambdaMin") 
 	}
-	if (class(lambdaInit) != "numeric"){ 
+	if (!inherits(lambdaInit, "numeric")){ 
 		stop("Input (lambdaInit) is of wrong class") 
 	}
 	if (length(lambdaInit) < 1){ 
@@ -589,13 +592,13 @@ optPenaltyPgen.kCVauto.groups <- function(Y,
 	if (any(lambdaInit > lambdaMax)){ 
 		stop("Input (lambdaInit) must be smaller than lambdaMax") 
 	}
-	if (class(fold) != "numeric" & class(fold) != "integer"){
+	if (!inherits(fold, "numeric") & !inherits(fold, "integer")){ 
 		stop("Input (fold) is of wrong class") 
 	}
 	if ((fold <=  1) | (fold > nrow(Y))){ 
 		stop("Input (fold) out of range") 
 	}
-	if (class(groups) != "numeric" & class(groups) != "integer" & class(groups) != "character"){
+	if (!inherits(groups, "numeric") & !inherits(groups, "integer") & !inherits(groups, "character")){
 		stop("Input (groups) is of wrong class") 
 	}
 	if ((length(groups) <=  1) | (length(groups) > ncol(Y))){ 
@@ -604,7 +607,7 @@ optPenaltyPgen.kCVauto.groups <- function(Y,
 	if (!isSymmetric(target)){ 
 	    stop("target should be a symmetric matrix") 
 	}
-	if (as.character(class(minSuccDiff)) != "numeric"){ 
+	if (!inherits(minSuccDiff, "numeric")){ 
 	        stop("Input (minSuccDiff) is of wrong class.") 
 	}
 	if (length(minSuccDiff) != 1){ 
@@ -616,7 +619,7 @@ optPenaltyPgen.kCVauto.groups <- function(Y,
 	if (minSuccDiff <= 0){ 
 	    stop("Input (minSuccDiff) is not a positive number.") 
 	}
-	if (as.character(class(nInit)) != "numeric" & as.character(class(nInit)) !=  "integer"){ 
+	if (!inherits(nInit, "numeric") & !inherits(nInit, "integer")){ 
 	    stop("Input (nInit) is of wrong class.") 
 	}
 	if (length(nInit) != 1){ 
@@ -637,7 +640,7 @@ optPenaltyPgen.kCVauto.groups <- function(Y,
 	if(ncol(zeros) != 2){ 
 	        stop("Wrong dimensions of the (zeros).") 
 	} 
-	if (as.character(class(penalize.diag)) != "logical"){ 
+	if (!inherits(penalize.diag, "logical")){ 
 	    stop("Input (penalize.diag) is of wrong class.") 
 	}    
 

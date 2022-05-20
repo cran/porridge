@@ -68,7 +68,7 @@ inline arma::mat armaRidgePanyTarget(const arma::mat & S,
 	if (invert == 1) {
 		eigvecs.each_row() %= arma::trans(arma::sqrt(D_inv));
 	} else {
-		eigvecs.each_row() %= arma::trans(arma::sqrt((sqroot - eigvals))/lambda);
+		eigvecs.each_row() %= arma::trans(arma::sqrt((sqroot - eigvals)/lambda));
 	}
 	return eigvecs * arma::trans(eigvecs);
 }
@@ -132,11 +132,10 @@ inline arma::mat armaRidgePscalarTarget(const arma::mat& S,
 	if (invert == 1) {
  		eigvecs.each_row() %= arma::trans(arma::sqrt(D_inv));
 	} else {
- 		eigvecs.each_row() %= arma::trans(arma::sqrt((sqroot - eigvals))/lambda);
+ 		eigvecs.each_row() %= arma::trans(arma::sqrt((sqroot - eigvals)/lambda));
 	}
 	return eigvecs * arma::trans(eigvecs);
 }
-
 
 
 inline arma::mat armaRidgeP(const arma::mat& S,
@@ -249,7 +248,9 @@ Rcpp::List ridgeGGMmixture(const arma::mat& Y,
 
 	// start iterating	
 	bool stayInLoop = TRUE; 
+	int  iterExecuted;
 	for (int u = 0; u < nInit && stayInLoop; ++u){
+		iterExecuted = u;
 		//
 		penLLprev = penLL;
 
@@ -263,6 +264,7 @@ Rcpp::List ridgeGGMmixture(const arma::mat& Y,
 			nonzeroPis = arma::find(pis > minMixProp);
 			pis(nonzeroPis) = (1-minMixProp) * pis(nonzeroPis) / arma::sum(pis(nonzeroPis));
 		}
+		
 
 		// M-step
 		for (int k = 0; k < K; ++k){
@@ -282,12 +284,12 @@ Rcpp::List ridgeGGMmixture(const arma::mat& Y,
 			log_det(val, sign, cPs.submat(k*p, 0, (k+1)*p-1, p-1));
 			Ytilde          = Y.each_row() - cMeans.row(k);
 			cWeights.row(k) = log(pis(k)) + val / 2 - 
-					  p * log(2 * arma::datum::pi) / 2 -
-					  arma::trans(arma::sum((Ytilde * 
+			                  p * log(2 * arma::datum::pi) / 2 -
+			                  arma::trans(arma::sum((Ytilde * 
 			                  cPs.submat(k*p, 0, (k+1)*p-1, p-1)) % Ytilde, 1)) / 2;
 		}
 		// subtract maximum value (to avoid infinity when taking exponential)
-		maxW     = arma::max(arma::max(cWeights));
+		maxW     = arma::max(arma::max(cWeights));		
 		cWeights = cWeights - maxW;
 		// LL       = arma::conv_to<double>::from(arma::sum(
 		//            arma::trans(arma::log(arma::sum(arma::exp(cWeights))))) 
@@ -296,13 +298,15 @@ Rcpp::List ridgeGGMmixture(const arma::mat& Y,
 		cWeights = arma::normalise(arma::exp(cWeights), 1);
 	
 		// evaluate penalty
-		penLL = LL;
+		penLL = 0;
 		for (int k = 0; k < K; ++k){
-			penLL = penLL - lambda * arma::accu(
-			                         arma::square(cPs.submat(k*p,       0, 
-			                                                (k+1)*p-1, p-1) - target)) / 2;
+			penLL = penLL + (lambda) * arma::accu(
+			                 arma::square(cPs.submat(k*p,       0, 
+			                                         (k+1)*p-1, p-1) - target)) / 2;
 		}
-	        if (std::abs(penLL - penLLprev) < minSuccDiff || penLLprev > penLL){ 
+		penLL = LL + penLL; 
+	        if (std::abs(penLL - penLLprev) < minSuccDiff){ 
+	        // if (std::abs(penLL - penLLprev) < minSuccDiff || 0.99*penLLprev > penLL){ 
 			stayInLoop = FALSE; 
 		}
 	}
@@ -312,7 +316,8 @@ Rcpp::List ridgeGGMmixture(const arma::mat& Y,
                                   Rcpp::Named("P")       = cPs, 
                                   Rcpp::Named("pi")      = pis, 
                                   Rcpp::Named("weights") = cWeights, 
-                                  Rcpp::Named("penLL")   = penLL);
+                                  Rcpp::Named("penLL")   = penLL,
+                                  Rcpp::Named("inits")   = iterExecuted);
 }
 
 

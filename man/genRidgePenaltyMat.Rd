@@ -10,7 +10,8 @@ The function produces an unscaled penalty parameter matrix to be used in the gen
 genRidgePenaltyMat(pr, pc=pr, type="2dimA")
 }
 \arguments{
-\item{pr}{ A positive \code{integer}. The number of covariates if \code{type="common"} or \code{type="fused1dim"}. Or, the row dimension of a 2-dimensional covariate layout if \code{type="fused2dimA"} or \code{type="fused2dimD"}.}
+\item{pr}{ A positive \code{integer}. The number of covariates if \code{type="common"} or 
+\code{type="fused1dim"}. Or, the row dimension of a 2-dimensional covariate layout if \code{type="fused2dimA"} or \code{type="fused2dimD"}.}
 \item{pc}{ A positive \code{integer}. The column dimension of a 2-dimensional covariate layout if \code{type="fused2dimA"} or \code{type="fused2dimD"}. Ignored if \code{type="common"} or \code{type="fused1dim"}. }
 \item{type}{ A \code{character}. Either \code{"common"}, \code{"fused1dim"}, \code{"fused2dimA"} or \code{"fused2dimD"}, see details. }
 }
@@ -24,7 +25,7 @@ The \code{type="common"}-option supports the `homogeneity' ridge penalization pr
 \deqn{
 \boldsymbol{\beta}^{\top} \mathbf{\Delta} \boldsymbol{\beta} \, \, = \, \, \boldsymbol{\beta}^{\top} ( \mathbf{I}_{pp} - p^{-1} \mathbf{1}_{pp}) \boldsymbol{\beta}  \, \, =  \, \, \sum\nolimits_{j=1}^p \big( \beta_j -
 p^{-1} \sum\nolimits_{j'=1}^p \beta_{j'}\big)^2.
-}
+}{ This is a test with the text representation. }
 This penalty matrix encourages shrinkage of the elements of \eqn{\boldsymbol{\beta}} to a common effect value.
 
 The \code{type="fused1dim"}-option facilitates the 1-dimensional fused ridge estimation of Goeman (2008). The ridge penalty matrix \eqn{\mathbf{\Delta}} for a \eqn{p}-dimensional regression parameter \eqn{\boldsymbol{\beta}} is such that:

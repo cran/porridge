@@ -31,7 +31,7 @@ optPenaltyGLMmultiT.kCVauto(Y, X, lambdaInit, model="linear", targetMat,
 The function returns an all-positive \code{numeric}, the cross-validated optimal penalty parameters. The average loglikelihood over the left-out samples is used as the cross-validation criterion. If \code{model="linear"}, also the average sum-of-squares over the left-out samples is offered as cross-validation criterion.
 }
 \references{
-van Wieringen, W.N. Binder, H. (2020), "Online learning of regression models from a sequence of datasets by penalized estimation", \emph{submitted}.
+van Wieringen, W.N. Binder, H. (2022), "Sequential learning of regression models by penalized estimation", \emph{accepted}.
 }
 \author{
 W.N. van Wieringen.
