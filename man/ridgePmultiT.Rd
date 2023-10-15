@@ -31,7 +31,7 @@ van Wieringen, W.N., Stam, K.A., Peeters, C.F.W., van de Wiel, M.A. (2020), "Upd
 W.N. van Wieringen.
 }
 \seealso{
-\code{\link[rags2ridges:ridgeP]{ridgeP}}, \code{\link[rags2ridges:ridgePchordal]{ridgePchordal}}.
+\code{\link[rags2ridges:ridgeP]{ridgeP}}.
 }
 \examples{
 # set dimension and sample size

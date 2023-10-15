@@ -1,5 +1,5 @@
-8a5395d83416e11fa80945766c98592c *DESCRIPTION
-03718b8243622bcbfe19361a8ba7165d *NAMESPACE
+432c3c63c31090a1d1c6ee976b088f49 *DESCRIPTION
+b6a0a54c852ed2bd1aa522551d618bf8 *NAMESPACE
 284ccf616f59e1398e31e7e0ea5c8530 *R/RcppExports.R
 ccacbed0fc72cdd73b18be8f008663a1 *R/depreciatedFunctions.R
 5bf567bb166b696397d3f33763a65478 *R/porridge-package.R
@@ -8,7 +8,7 @@ ae3ce2a4b3c48c03420a8c6aeb153f7e *R/ridgeGGMmixtureAndCo.R
 90d7bde70070dc19512c10b45a5e17e2 *R/ridgePgenAndCo.R
 ac65d89b6e639c4739446f2064efd24b *R/ridgePmultitTandCo.R
 e648442acb3ea6f74cf4523347abfaab *R/ridgePrepAndCo.R
-5576d077821562e2b510957fce3ad99c *inst/CITATION
+b0c8c5891b80f9cbcff0467965c1806b *inst/CITATION
 db272f03e5a541faaa83db2c562464e4 *inst/NEWS.Rd
 634eb2bdc002eeab94c58bb942defac1 *inst/include/porridge.h
 466077e57e41e0b708a58c29d9d02000 *inst/include/porridge_RcppExports.h
@@ -27,11 +27,11 @@ fb3d407cf883a7303c3c5766d4c8be2f *man/ridgeGGMmixture.Rd
 42efce33b2ca77a1363e20fe2f4e62b5 *man/ridgeGLM.Rd
 ac30d63d4ac585cf5aca1605e31fbd5e *man/ridgeGLMdof.Rd
 547a0f89f49fa4040d4ec6e42f3cbd15 *man/ridgeGLMmultiT.Rd
-b1e972423272f238e3e99f247db293d0 *man/ridgePgen.Rd
+369c6cf91a02e78568c8ae6749454acf *man/ridgePgen.Rd
 687a26763d21057f2c308feebb2d6661 *man/ridgePgen.kCV.Rd
 d42b9d49db69bcafb550b31b1302fc7a *man/ridgePgen.kCV.banded.Rd
 493c0293416149db8eaec042e5d3cd2f *man/ridgePgen.kCV.groups.Rd
-22c8dc1360ce291dcc4e5051420e4208 *man/ridgePmultiT.Rd
+e6b2025e24c4b7a448dbb84050b5a67e *man/ridgePmultiT.Rd
 df7fa64a36db8340369c5f14fa5973a0 *man/ridgePrep.Rd
 0858e5a9181df60b91f02e8a7802fa77 *man/ridgePrepEdiag.Rd
 c8e80a85db170765a19e183c464d291a *src/Makevars

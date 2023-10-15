@@ -1,12 +1,14 @@
 importFrom(MASS, ginv)
 
-importFrom(stats, optim, optimize, constrOptim)
+importFrom(stats, optim, optimize, constrOptim, pnorm)
+
+importFrom(pracma, randortho)
 
 importFrom(Matrix, bandSparse)
 
 importFrom(mvtnorm, rmvnorm)
 
-importFrom("methods", "is")
+importFrom("methods", "is", "new")
 
 importFrom(Rcpp, evalCpp)
 

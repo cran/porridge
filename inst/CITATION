@@ -3,9 +3,10 @@ citHeader("To cite the porridge package in publications please use:")
 year <- sub(".*(2[[:digit:]]{3})-.*", "\\1", meta$Date, perl = TRUE)
 vers <- paste("R package version", meta$Version)
 
-citEntry(entry="Manual",
-    title = "porridge: Ridge-Type Estimation of a Potpourri of Models",
-    author = personList(as.person("W.N. van Wieringen"), as.person("M. Aflakparast")),
+bibentry(bibtype="Manual",
+    title  = "porridge: Ridge-Type Estimation of a Potpourri of Models",
+    author = c(person(given = c("W.", "N."), family = "van Wieringen"),
+               person(given = c("M."), family = "Aflakparast")),
     year = year,
     note = vers,
     url = "https://CRAN.R-project.org/package=porridge",
@@ -15,9 +16,11 @@ citEntry(entry="Manual",
             vers, ". https://CRAN.R-project.org/package=porridge", sep = "")
 )
 
-citEntry(entry="Article",
+bibentry(bibtype="Article",
     title = "Reconstruction of molecular network evolution from cross-sectional omics data",
-    author = personList(as.person("M. Aflakparast"), as.person("M.C.M. de Gunst"), as.person("W.N. van Wieringen")),
+    author = c(person(given = c("M."), family = "Aflakparast"),
+               person(given = c("M.", "C.", "M."), family = "de Gunst"),
+               person(given = c("W.", "N."), family = "van Wieringen")),
     journal = "Biometrical Journal",
     volume = "60", 
     number = "3", 
@@ -29,9 +32,9 @@ citEntry(entry="Article",
         	"Biometrical Journal, 60(3), 547-643", sep = "")
 )
 
-citEntry(entry="Article",
+bibentry(bibtype="Article",
     title = "The generalized ridge estimator of the inverse covariance matrix",
-    author = personList(as.person("W.N. van Wieringen")),
+    author = c(person(given = c("W.", "N."), family = "van Wieringen")),
     journal = "Journal of Computational and Graphical Statistics",
     volume = "28", 
     number = "4", 
@@ -41,28 +44,26 @@ citEntry(entry="Article",
       paste("van Wieringen, W.N. (2019). ",
 		"The generalized ridge estimator of the inverse covariance matrix. ", 
         	"Journal of Computational and Graphical Statistics, 28(4), 932-942.", sep = "")
-
 )
 
-
-
-citEntry(entry="Article",
+bibentry(bibtype="Book",
     title = "Lecture notes on ridge regression",
-    author = personList(as.person("W.N. van Wieringen")),
+    author = c(person(given = c("W.", "N."), family = "van Wieringen")),
     journal = "Arxiv preprint",
     volume  = "arXiv:1509.09169",
     year = 2021,
     textVersion =
       paste("van Wieringen, W.N. (2019). ",
 		"Lecture notes on ridge regression. ", 
-        	"arXiv preprint, arXiv:1509.09169.", sep = "")
-
+        	"arXiv preprint, arXiv:1509.09169.", sep = ""),
+    publisher="Arxiv"
 )
 
 
-citEntry(entry="Article",
+bibentry(bibtype="Article",
     title = "Sequential learning of regression models by penalized estimation",
-    author = personList(as.person("W.N. van Wieringen"), as.person("H. Binder")),
+    author = c(person(given = c("W.", "N."), family = "van Wieringen"),
+               person(given = c("H."),        family="Binder")),
     journal = "Journal of Computational and Graphical Statistics",
     volume = "", 
     number = "", 
@@ -72,13 +73,12 @@ citEntry(entry="Article",
       paste("van Wieringen, W.N., Binder, H. (2022). ",
 		"Sequential learning of regression models by penalized estimation. ", 
         	"Journal of Computational and Graphical Statistics, accepted.", sep = "")
-
 )
 
-
-citEntry(entry="Article",
+bibentry(bibtype="Article",
     title = "Penalized estimation of the Gaussian graphical model from data with replicates",
-    author = personList(as.person("W.N. van Wieringen"), as.person("Y. Chen")),
+    author = c(person(given = c("W.", "N."), family = "van Wieringen"),
+               person(given=c("Y."),          family="Chen")),
     journal = "Statistics in Medicine",
     volume = "40", 
     number = "19", 
@@ -91,9 +91,12 @@ citEntry(entry="Article",
 
 )
 
-citEntry(entry="Article",
+bibentry(bibtype="Article",
     title = "Updating of the Gaussian graphical model through targeted penalized estimation",
-    author = personList(as.person("W.N. van Wieringen"), as.person("K.A. Stam"), as.person("C.F.W. Peeters"), as.person("M.A. van de Wiel")),
+    author = c(person(given = c("W.", "N."), family = "van Wieringen"),
+                   person(given = c("K,", "A,"), family="Stam"), 
+                   person(given = c("C.", "F.", "W."), family="Peeters"),
+                   person(given = c("M.", "A."), family="van de Wiel")),
     journal = "Journal of Multivariate Analysis",
     volume = "178", 
     number = "article 104621", 

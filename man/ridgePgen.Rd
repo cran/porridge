@@ -33,7 +33,7 @@ van Wieringen, W.N. (2019), "The generalized ridge estimator of the inverse cova
 W.N. van Wieringen.
 }
 \seealso{
-\code{\link[rags2ridges:ridgeP]{ridgeP}}, \code{\link[rags2ridges:ridgePchordal]{ridgePchordal}}.
+\code{\link[rags2ridges:ridgeP]{ridgeP}}.
 }
 \examples{
 # set dimension and sample size

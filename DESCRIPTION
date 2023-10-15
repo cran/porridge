@@ -1,8 +1,8 @@
 Package: porridge
 Type: Package
 Title: Ridge-Type Penalized Estimation of a Potpourri of Models
-Version: 0.3.1
-Date: 2022-05-17
+Version: 0.3.2
+Date: 2023-10-12
 Author: Wessel N. van Wieringen [aut, cre]
     (<https://orcid.org/0000-0002-5100-9123>),
   Mehran Aflakparast [ctb] (part of the R-code of the mixture
@@ -18,11 +18,10 @@ License: GPL (>= 2)
 LazyLoad: yes
 URL: https://www.math.vu.nl/~wvanwie/
 Depends: R (>= 3.5.0)
-Imports: MASS, Matrix, stats, mvtnorm, Rcpp, methods
+Imports: MASS, Matrix, stats, mvtnorm, Rcpp, methods, pracma
 Suggests: rags2ridges, ragt2ridges
 LinkingTo: Rcpp, RcppArmadillo
 NeedsCompilation: yes
-Packaged: 2022-05-20 09:13:26 UTC; wessel
+Packaged: 2023-10-15 15:52:24 UTC; wessel
 Repository: CRAN
-RoxygenNote: 7.1.2
-Date/Publication: 2022-05-20 13:20:02 UTC
+Date/Publication: 2023-10-15 21:50:02 UTC
