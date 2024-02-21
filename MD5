@@ -1,4 +1,4 @@
-432c3c63c31090a1d1c6ee976b088f49 *DESCRIPTION
+27df280b8aa8e317e6478878dc605c58 *DESCRIPTION
 b6a0a54c852ed2bd1aa522551d618bf8 *NAMESPACE
 284ccf616f59e1398e31e7e0ea5c8530 *R/RcppExports.R
 ccacbed0fc72cdd73b18be8f008663a1 *R/depreciatedFunctions.R
@@ -22,7 +22,7 @@ ee123467285d30c60a565698de4700ad *man/optPenaltyPgen.kCVauto.groups.Rd
 3586e0de7f6e14778c830b1b7dbebfcf *man/optPenaltyPmultiT.kCVauto.Rd
 7cd2328e6feabdb91b0d7212551fcc88 *man/optPenaltyPrep.kCVauto.Rd
 810984eb7de0e6a61c9ae0d57c438bc9 *man/optPenaltyPrepEdiag.kCVauto.Rd
-5cb837938296b5130de6a268fea314bd *man/porridge-package.Rd
+5ec220343f5de9f7159da10a1c3065cc *man/porridge-package.Rd
 fb3d407cf883a7303c3c5766d4c8be2f *man/ridgeGGMmixture.Rd
 42efce33b2ca77a1363e20fe2f4e62b5 *man/ridgeGLM.Rd
 ac30d63d4ac585cf5aca1605e31fbd5e *man/ridgeGLMdof.Rd

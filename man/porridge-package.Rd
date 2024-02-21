@@ -21,7 +21,7 @@ The following functions facilitate the ridge-type penalized estimation of variou
 }
 Future versions aim to include more ridge-type functionality.
 
-In part the \code{porridge}-package extends/builds upon the \code{\link[rags2ridges:rags2ridges]{rags2ridges}}- and \code{\link[ragt2ridges:ragt2ridges]{ragt2ridges}}-packages, in which some or all functionality of the \code{porridge}-package may be absorped at some point in the future.
+In part the \code{porridge}-package extends/builds upon the \code{\link[rags2ridges:rags2ridges]{rags2ridges}}-packages, in which some or all functionality of the \code{porridge}-package may be absorped at some point in the future.
 }
 \author{
 Wessel N. van Wieringen <w.vanwieringen@vumc.ml>
@@ -32,8 +32,6 @@ Aflakparast, M., de Gunst, M.C.M., van Wieringen, W.N. (2018), "Reconstruction o
 Lettink, A., Chinapaw, M.J.M., van Wieringen, W.N. (2022), "Two-dimensional fused targeted ridge regression for health indicator prediction from accelerometer data", \emph{submitted}.
 
 Peeters, C.F.W., Bilgrau, A.E., and van Wieringen, W.N. (2021), "\code{rags2ridges}: Ridge Estimation of Precision Matrices from  High-Dimensional Data", R package version 2.2.5. \url{https://CRAN.R-project.org/package=rags2ridges}.
-
-van Wieringen, W.N. (2020), "\code{ragt2ridges}: Ridge Estimation of Vector  Auto-Regressive (VAR) Processes", R package version 0.3.4. \url{https://CRAN.R-project.org/package=ragt2ridges}.
 
 van Wieringen, W.N. (2019), "The generalized ridge estimator of the inverse covariance matrix", \emph{Journal of Computational and Graphical Statistics}, 28(4), 932-942.
 
